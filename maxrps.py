@@ -106,7 +106,7 @@ class MaxRps(object):
 
         def ramper():
             ramptime = 1
-            MAXRAMPTIME = 5
+            MAXRAMPTIME = 7
             lastTime = time.time()
             lastRps = 0
 
