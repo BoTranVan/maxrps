@@ -265,7 +265,7 @@ if __name__ == "__main__":
     parser = OptionParser(usage="usage: %prog [options] url")
     parser.add_option("-t", "--time", action="store", type="int", dest="time", default=250, help="Median latency accepted in milliseconds. Default: 250 ms")
     parser.add_option("-m", "--maxtime", action="store", type="int", dest="maxtime", default=1000, help="Maximum latency accepted (anything else will be a failed request) in milliseconds. Default: 1000 ms")
-    parser.add_option("-e", "--errorrate", action="store", type="int", dest="errorrate", default=5, help="Maximum accepted error rate (in percent) Default: 5")
+    parser.add_option("-e", "--errorrate", action="store", type="float", dest="errorrate", default=5, help="Maximum accepted error rate (in percent) Default: 5")
     parser.add_option("-c", "--concurrency", action="store", type="int", dest="concurrency", default=1, help="Number of concurrent requests to start at. Default: 1")
     parser.add_option("-q", "--quiet", action="store_true", dest="quiet", help="Do not print status updates in short intervals", default=False)
 
