@@ -249,15 +249,17 @@ class MaxRps(object):
     def post_mortem(self):
         print "-" * 100
         self.reports.sort(key = operator.itemgetter(0), reverse=True)
-        rps = []
         for report in self.reports[:3]:
-            rps.append(report[0])
             report_str = getReport(*report)
             print "# " + report_str + " #"
         
-        if rps:
+        avg = []
+        for values in zip(*self.reports[:3]):
+            avg.append(float(sum(values)) / len(values))
+        if avg:
             print
-            print "Average: %.1f RPS" % (float(sum(rps)) / len(rps))
+            print "Averages:"
+            print getReport(*avg)
 
 
 if __name__ == "__main__":
